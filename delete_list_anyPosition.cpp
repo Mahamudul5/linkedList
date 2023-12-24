@@ -65,6 +65,13 @@ void delete_any_position(Node *head, int pos)
     temp->next = temp->next->next;
     delete deleteNote;
 }
+void delete_form_head(Node *&head)
+{
+
+    Node *deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+}
 int main()
 {
     Node *head = NULL;
@@ -76,7 +83,8 @@ int main()
         cout << "Option:3 Inset Any Position." << endl;
         cout << "Option:4 Insert At Head." << endl;
         cout << "Option:5 Enter position to delete" << endl;
-        cout << "Option:6 Terminate." << endl;
+        cout << "Option:6 Deleted head" << endl;
+        cout << "Option:7 Terminate." << endl;
         int op;
         cin >> op;
         if (op == 1)
@@ -116,6 +124,11 @@ int main()
             delete_any_position(head, pos);
         }
         else if (op == 6)
+        {
+
+            delete_form_head(head);
+        }
+        else if (op == 7)
         {
             break;
         }
